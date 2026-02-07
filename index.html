@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Treehouse Athletic Club | Utah's Premier Family Fitness Center</title>
+  <title>Treehouse Athletic Club | It's Not a Gym. It's a Lifestyle.</title>
+  <meta name="description" content="72,000 sq ft of premium fitness in Draper, Utah. World-class training, luxury spa, and a community that elevates you.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --forest: #1a3a2f;
-      --forest-dark: #0f2820;
-      --moss: #4a7c59;
-      --sage: #8fbc8f;
-      --gold: #d4a84b;
-      --cream: #faf9f6;
-      --charcoal: #2d2d2d;
+      --black: #0a0a0a;
+      --dark: #141414;
+      --dark-gray: #1a1a1a;
+      --gold: #c9a227;
+      --gold-light: #e8c547;
+      --white: #ffffff;
+      --gray: #888;
+      --light-gray: #f5f5f5;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
+    html { scroll-behavior: smooth; }
+    
     body {
-      font-family: 'Open Sans', sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      font-weight: 300;
     }
     
-    h1, h2, h3, h4, h5 {
-      font-family: 'Oswald', sans-serif;
-      text-transform: uppercase;
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
       letter-spacing: 0.05em;
     }
     
@@ -36,514 +41,451 @@
     nav {
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(26, 58, 47, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
+      width: 100%;
+      padding: 1.5rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
     }
     
     .logo {
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      letter-spacing: 0.15em;
+      color: var(--white);
     }
     
     .logo span { color: var(--gold); }
     
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       list-style: none;
     }
     
     .nav-links a {
-      color: white;
+      color: var(--white);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
+      font-weight: 400;
       transition: color 0.3s;
     }
     
     .nav-links a:hover { color: var(--gold); }
     
     .nav-cta {
-      background: var(--gold);
-      color: var(--forest-dark);
-      padding: 0.8rem 1.5rem;
-      border-radius: 4px;
-      font-weight: 700;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.75rem 2rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.2em;
       text-decoration: none;
       transition: all 0.3s;
     }
     
     .nav-cta:hover {
-      background: white;
-      transform: translateY(-2px);
+      background: var(--gold);
+      color: var(--black);
     }
     
-    /* Hero Section */
+    /* Hero */
     .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 100%);
-      position: relative;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-    }
-    
-    .hero-video-overlay {
-      position: absolute;
-      inset: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-      opacity: 0.5;
-    }
-    
-    .hero-bg-shapes {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-    
-    .shape {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--moss);
-      opacity: 0.1;
-      animation: float 20s ease-in-out infinite;
-    }
-    
-    .shape-1 { width: 600px; height: 600px; top: -200px; right: -200px; animation-delay: 0s; }
-    .shape-2 { width: 400px; height: 400px; bottom: -100px; left: -100px; animation-delay: -5s; }
-    .shape-3 { width: 300px; height: 300px; top: 50%; left: 20%; animation-delay: -10s; }
-    
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, 30px) scale(1.05); }
+      text-align: center;
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+                  url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;
     }
     
     .hero-content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
       max-width: 900px;
-      padding: 0 2rem;
+      padding: 2rem;
     }
     
-    .hero-badge {
+    .hero-tag {
       display: inline-block;
-      background: rgba(212, 168, 75, 0.2);
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.4em;
+      color: var(--gold);
       margin-bottom: 2rem;
-      animation: fadeInUp 0.8s ease-out;
+      border: 1px solid var(--gold);
+      padding: 0.5rem 1.5rem;
     }
     
     .hero h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      color: white;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
+      font-size: clamp(4rem, 12vw, 10rem);
+      line-height: 0.9;
+      margin-bottom: 2rem;
     }
     
-    .hero h1 span { color: var(--gold); }
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+    }
     
-    .hero-sub {
-      font-size: 1.3rem;
-      color: var(--sage);
-      margin-bottom: 2.5rem;
-      animation: fadeInUp 0.8s ease-out 0.4s both;
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      font-weight: 300;
     }
     
     .hero-ctas {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeInUp 0.8s ease-out 0.6s both;
     }
     
     .btn {
-      padding: 1rem 2.5rem;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
+      padding: 1rem 3rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
       text-decoration: none;
-      border-radius: 4px;
-      transition: all 0.3s;
-      cursor: pointer;
-      border: none;
+      transition: all 0.4s ease;
+      font-weight: 500;
     }
     
     .btn-primary {
       background: var(--gold);
-      color: var(--forest-dark);
+      color: var(--black);
     }
     
     .btn-primary:hover {
-      background: white;
+      background: var(--gold-light);
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 20px 40px rgba(201, 162, 39, 0.3);
     }
     
     .btn-secondary {
       background: transparent;
-      color: white;
-      border: 2px solid white;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
     }
     
     .btn-secondary:hover {
-      background: white;
-      color: var(--forest);
+      border-color: var(--white);
+      background: rgba(255,255,255,0.1);
     }
     
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Stats */
+    .stats {
+      background: var(--dark);
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     
-    /* Stats Bar */
-    .stats-bar {
-      background: var(--forest-dark);
-      padding: 3rem 2rem;
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       text-align: center;
     }
     
-    .stat {
-      color: white;
-    }
-    
     .stat-number {
-      font-family: 'Oswald', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
       color: var(--gold);
       line-height: 1;
     }
     
     .stat-label {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      opacity: 0.8;
+      letter-spacing: 0.2em;
+      color: var(--gray);
       margin-top: 0.5rem;
     }
     
-    /* Amenities Section */
-    .amenities {
-      padding: 6rem 2rem;
-      background: var(--cream);
-    }
-    
-    .section-header {
+    /* Statement Section */
+    .statement {
+      padding: 10rem 2rem;
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 4rem;
+      background: var(--black);
     }
     
-    .section-tag {
-      color: var(--moss);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-    }
-    
-    .section-header h2 {
-      font-size: 2.8rem;
-      color: var(--forest);
-      margin-bottom: 1rem;
-    }
-    
-    .section-header p {
-      color: #666;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-    
-    .amenities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .amenity-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: all 0.3s;
-    }
-    
-    .amenity-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-    }
-    
-    .amenity-img {
-      height: 200px;
-      background: var(--forest);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-    
-    .amenity-content {
-      padding: 1.5rem;
-    }
-    
-    .amenity-content h3 {
-      font-size: 1.3rem;
-      color: var(--forest);
-      margin-bottom: 0.5rem;
-    }
-    
-    .amenity-content p {
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    /* Pricing Section */
-    .pricing {
-      padding: 6rem 2rem;
-      background: var(--forest);
-    }
-    
-    .pricing .section-header h2 { color: white; }
-    .pricing .section-header p { color: var(--sage); }
-    .pricing .section-tag { color: var(--gold); }
-    
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+    .statement h2 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
       max-width: 1000px;
       margin: 0 auto;
+      line-height: 1.1;
     }
     
-    .pricing-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2.5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .statement h2 span { color: var(--gold); }
+    
+    /* Features */
+    .features {
+      background: var(--dark-gray);
     }
     
-    .pricing-card.featured {
-      border: 3px solid var(--gold);
-      transform: scale(1.05);
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
     }
     
-    .pricing-card.featured::before {
-      content: 'MOST POPULAR';
-      position: absolute;
-      top: 1rem;
-      right: -2rem;
-      background: var(--gold);
-      color: var(--forest-dark);
-      padding: 0.3rem 2.5rem;
+    .feature-row:nth-child(even) .feature-image { order: 2; }
+    .feature-row:nth-child(even) .feature-content { order: 1; }
+    
+    .feature-image {
+      background-size: cover;
+      background-position: center;
+      min-height: 500px;
+    }
+    
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 6rem;
+      background: var(--dark);
+    }
+    
+    .feature-tag {
       font-size: 0.7rem;
-      font-weight: 700;
-      transform: rotate(45deg);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
     }
     
-    .pricing-tier {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.5rem;
-      color: var(--forest);
-      margin-bottom: 0.5rem;
-    }
-    
-    .pricing-price {
-      font-family: 'Oswald', sans-serif;
+    .feature-content h3 {
       font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--forest);
+      margin-bottom: 1.5rem;
       line-height: 1;
     }
     
-    .pricing-price span {
+    .feature-content p {
+      color: var(--gray);
       font-size: 1rem;
-      font-weight: 400;
-      color: #666;
+      margin-bottom: 2rem;
+      max-width: 400px;
     }
     
-    .pricing-desc {
-      color: #666;
-      margin: 1rem 0 1.5rem;
+    /* Spa Section */
+    .spa {
+      padding: 10rem 2rem;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80') center/cover fixed;
+      text-align: center;
     }
     
-    .pricing-features {
-      list-style: none;
-      text-align: left;
+    .spa-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: var(--gold);
       margin-bottom: 2rem;
     }
     
-    .pricing-features li {
-      padding: 0.5rem 0;
-      color: #444;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .spa h2 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      margin-bottom: 1.5rem;
     }
     
-    .pricing-features li::before {
-      content: '✓';
-      color: var(--moss);
-      font-weight: bold;
+    .spa p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 3rem;
     }
     
-    /* Reviews Section */
-    .reviews {
-      padding: 6rem 2rem;
-      background: var(--cream);
+    /* Classes Grid */
+    .classes {
+      padding: 8rem 2rem;
+      background: var(--black);
     }
     
-    .reviews-showcase {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    
-    .review-score {
+    .classes-header {
       text-align: center;
+      margin-bottom: 4rem;
     }
     
-    .review-number {
-      font-family: 'Oswald', sans-serif;
-      font-size: 5rem;
-      font-weight: 700;
-      color: var(--forest);
-      line-height: 1;
+    .classes-header h2 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
     }
     
-    .review-stars {
-      color: var(--gold);
-      font-size: 1.5rem;
-      letter-spacing: 0.1em;
+    .classes-header p {
+      color: var(--gray);
+      font-size: 1rem;
     }
     
-    .review-count {
-      color: #666;
-      margin-top: 0.5rem;
-    }
-    
-    .reviews-grid {
+    .classes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       max-width: 1200px;
       margin: 0 auto;
     }
     
-    .review-card {
-      background: white;
+    .class-card {
+      aspect-ratio: 1;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
     }
     
-    .review-card .stars { color: var(--gold); margin-bottom: 0.5rem; }
-    .review-card p { color: #444; font-style: italic; line-height: 1.6; margin-bottom: 1rem; }
-    .review-card .author { font-weight: 600; color: var(--forest); }
+    .class-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 50%);
+      z-index: 1;
+    }
     
-    /* CTA Section */
+    .class-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .class-card:hover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold);
+      z-index: 2;
+    }
+    
+    .class-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 3;
+    }
+    
+    .class-type {
+      font-size: 0.7rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      z-index: 3;
+    }
+    
+    /* CTA */
     .cta {
-      padding: 6rem 2rem;
-      background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+      padding: 10rem 2rem;
       text-align: center;
+      background: var(--dark);
+      position: relative;
+    }
+    
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 100px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
     }
     
     .cta h2 {
-      font-size: 3rem;
-      color: white;
+      font-size: clamp(3rem, 8vw, 6rem);
       margin-bottom: 1rem;
     }
     
+    .cta h2 span { color: var(--gold); }
+    
     .cta p {
-      color: var(--sage);
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
     }
     
     /* Footer */
     footer {
-      background: var(--charcoal);
-      color: white;
-      padding: 3rem 2rem 1.5rem;
+      background: var(--black);
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 4rem;
       max-width: 1200px;
-      margin: 0 auto 2rem;
+      margin: 0 auto;
     }
     
-    .footer-col h4 {
-      color: var(--gold);
+    .footer-brand h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.15em;
       margin-bottom: 1rem;
-      font-size: 1rem;
     }
     
-    .footer-col p, .footer-col a {
-      color: #aaa;
+    .footer-brand p {
+      color: var(--gray);
       font-size: 0.9rem;
-      line-height: 1.8;
-      text-decoration: none;
-      display: block;
     }
     
-    .footer-col a:hover { color: var(--gold); }
+    .footer-col h5 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-col a {
+      display: block;
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s;
+    }
+    
+    .footer-col a:hover { color: var(--white); }
     
     .footer-bottom {
+      max-width: 1200px;
+      margin: 4rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
       text-align: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid #444;
-      color: #666;
-      font-size: 0.85rem;
+      color: var(--gray);
+      font-size: 0.8rem;
     }
     
     /* Mobile */
+    @media (max-width: 1024px) {
+      .feature-row { grid-template-columns: 1fr; }
+      .feature-row:nth-child(even) .feature-image { order: 1; }
+      .feature-row:nth-child(even) .feature-content { order: 2; }
+      .classes-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    
     @media (max-width: 768px) {
+      nav { padding: 1rem 2rem; }
       .nav-links { display: none; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
-      .hero h1 { font-size: 2.5rem; }
-      .pricing-card.featured { transform: scale(1); }
+      .hero h1 { font-size: 4rem; }
+      .feature-content { padding: 3rem 2rem; }
+      .classes-grid { grid-template-columns: 1fr; }
     }
     
     /* Preview Banner */
@@ -552,240 +494,185 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(90deg, #7c3aed, #4f46e5);
-      color: white;
+      background: var(--gold);
+      color: var(--black);
       padding: 1rem 2rem;
       text-align: center;
       z-index: 9999;
       font-weight: 600;
+      font-size: 0.9rem;
     }
     
-    .preview-banner a {
-      color: white;
-      text-decoration: underline;
-    }
+    .preview-banner a { color: var(--black); }
   </style>
 </head>
 <body>
   <div class="preview-banner">
-    🎨 PREVIEW SITE by GullStack — <a href="mailto:hello@gullstack.com">Let's build this for real →</a>
+    ✨ PREVIEW — Built by GullStack — <a href="mailto:hello@gullstack.com">Let's make this yours →</a>
   </div>
 
   <nav>
-    <div class="logo">🌲 TREEHOUSE <span>ATHLETIC CLUB</span></div>
+    <div class="logo">TREE<span>HOUSE</span></div>
     <ul class="nav-links">
-      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#spa">The Spa</a></li>
       <li><a href="#classes">Classes</a></li>
-      <li><a href="#pricing">Membership</a></li>
-      <li><a href="#spa">Spa</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#membership">Membership</a></li>
     </ul>
-    <a href="#pricing" class="nav-cta">Join Now</a>
+    <a href="#membership" class="nav-cta">Join Now</a>
   </nav>
 
   <section class="hero">
-    <div class="hero-bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-    <div class="hero-video-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Utah's #1 Family Fitness Center Since 1999</div>
-      <h1>Where Families Get <span>Strong Together</span></h1>
-      <p class="hero-sub">72,000 sq ft of premium fitness, pools, rock climbing, spa & childcare — all under one roof in Draper & Sandy.</p>
+      <div class="hero-tag">Draper, Utah • Since 1999</div>
+      <h1>IT'S NOT A GYM.<span>IT'S A LIFESTYLE.</span></h1>
+      <p class="hero-subtitle">72,000 square feet of premium fitness, world-class training, and luxury amenities designed to transform how you live.</p>
       <div class="hero-ctas">
-        <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
-        <a href="#tour" class="btn btn-secondary">Take a Virtual Tour</a>
+        <a href="#membership" class="btn btn-primary">Start Your Journey</a>
+        <a href="#experience" class="btn btn-secondary">Explore</a>
       </div>
     </div>
   </section>
 
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-number">25+</div>
-      <div class="stat-label">Years Strong</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">72K</div>
-      <div class="stat-label">Sq Ft Facility</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">50+</div>
-      <div class="stat-label">Weekly Classes</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">4.3★</div>
-      <div class="stat-label">293 Reviews</div>
-    </div>
-  </div>
-
-  <section class="amenities" id="amenities">
-    <div class="section-header">
-      <div class="section-tag">World-Class Facilities</div>
-      <h2>Everything You Need Under One Roof</h2>
-      <p>From state-of-the-art equipment to relaxing spa treatments, we've designed every inch for your family's wellness.</p>
-    </div>
-    <div class="amenities-grid">
-      <div class="amenity-card">
-        <div class="amenity-img">🏋️</div>
-        <div class="amenity-content">
-          <h3>Fitness Floor</h3>
-          <p>State-of-the-art cardio & strength equipment with certified trainers ready to help you reach your goals.</p>
-        </div>
+  <section class="stats">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">72K</div>
+        <div class="stat-label">Square Feet</div>
       </div>
-      <div class="amenity-card">
-        <div class="amenity-img">🧗</div>
-        <div class="amenity-content">
-          <h3>Rock Climbing</h3>
-          <p>Massive indoor rock wall with beginner to expert routes. Year-round climbing for all ages.</p>
-        </div>
+      <div>
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Weekly Classes</div>
       </div>
-      <div class="amenity-card">
-        <div class="amenity-img">🏊</div>
-        <div class="amenity-content">
-          <h3>Pools & Hot Tubs</h3>
-          <p>Lap pools, leisure pools, and relaxing hot tubs. Swim lessons available for kids.</p>
-        </div>
+      <div>
+        <div class="stat-number">25</div>
+        <div class="stat-label">Years of Excellence</div>
       </div>
-      <div class="amenity-card">
-        <div class="amenity-img">🏀</div>
-        <div class="amenity-content">
-          <h3>Courts</h3>
-          <p>Basketball, pickleball, and racquetball courts. Drop-in games daily.</p>
-        </div>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-img">🧘</div>
-        <div class="amenity-content">
-          <h3>Group Fitness</h3>
-          <p>50+ weekly classes: Yoga, Pilates, HIIT, Spin, Barre, and more. Included with membership.</p>
-        </div>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-img">👶</div>
-        <div class="amenity-content">
-          <h3>Kids' Club & Daycare</h3>
-          <p>The Nest (6wk-3yr) and Kids' Club (4-12) keep your little ones active while you work out.</p>
-        </div>
+      <div>
+        <div class="stat-number">1</div>
+        <div class="stat-label">Destination</div>
       </div>
     </div>
   </section>
 
-  <section class="pricing" id="pricing">
-    <div class="section-header">
-      <div class="section-tag">Membership Options</div>
-      <h2>Find Your Perfect Fit</h2>
-      <p>No contracts. No hidden fees. Just fitness for the whole family.</p>
+  <section class="statement">
+    <h2>WHERE <span>PERFORMANCE</span> MEETS <span>LUXURY</span></h2>
+  </section>
+
+  <section class="features" id="experience">
+    <div class="feature-row">
+      <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&q=80')"></div>
+      <div class="feature-content">
+        <div class="feature-tag">World-Class Equipment</div>
+        <h3>TRAIN WITHOUT LIMITS</h3>
+        <p>State-of-the-art Hammer Strength, Life Fitness, and Technogym equipment across dedicated zones for cardio, strength, and functional training.</p>
+        <a href="#membership" class="btn btn-primary">View Floor</a>
+      </div>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-tier">Individual</div>
-        <div class="pricing-price">$59<span>/mo</span></div>
-        <p class="pricing-desc">Full access for one adult</p>
-        <ul class="pricing-features">
-          <li>Full gym access</li>
-          <li>All group classes</li>
-          <li>Pool & hot tub</li>
-          <li>Locker rooms & sauna</li>
-          <li>Mobile app access</li>
-        </ul>
-        <a href="#join" class="btn btn-primary" style="width:100%">Start Free Week</a>
+    <div class="feature-row">
+      <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=80')"></div>
+      <div class="feature-content">
+        <div class="feature-tag">Expert Coaching</div>
+        <h3>PERSONAL TRAINING</h3>
+        <p>Our certified trainers design precision programs backed by science. One-on-one sessions that unlock your full potential.</p>
+        <a href="#membership" class="btn btn-primary">Meet Trainers</a>
       </div>
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Family</div>
-        <div class="pricing-price">$129<span>/mo</span></div>
-        <p class="pricing-desc">Up to 4 family members</p>
-        <ul class="pricing-features">
-          <li>Everything in Individual</li>
-          <li>Kids' Club included</li>
-          <li>Rock climbing access</li>
-          <li>Guest passes (2/mo)</li>
-          <li>Spa discounts</li>
-        </ul>
-        <a href="#join" class="btn btn-primary" style="width:100%">Start Free Week</a>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-tier">Couple</div>
-        <div class="pricing-price">$99<span>/mo</span></div>
-        <p class="pricing-desc">Two adults, same household</p>
-        <ul class="pricing-features">
-          <li>Full gym access (2 adults)</li>
-          <li>All group classes</li>
-          <li>Pool & hot tub</li>
-          <li>Locker rooms & sauna</li>
-          <li>Guest pass (1/mo)</li>
-        </ul>
-        <a href="#join" class="btn btn-primary" style="width:100%">Start Free Week</a>
+    </div>
+    <div class="feature-row">
+      <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80')"></div>
+      <div class="feature-content">
+        <div class="feature-tag">Group Fitness</div>
+        <h3>SIGNATURE CLASSES</h3>
+        <p>From cycling and yoga to HIIT and barre — over 200 weekly classes led by elite instructors who push you further.</p>
+        <a href="#classes" class="btn btn-primary">View Schedule</a>
       </div>
     </div>
   </section>
 
-  <section class="reviews">
-    <div class="section-header">
-      <div class="section-tag">Member Love</div>
-      <h2>What Our Community Says</h2>
+  <section class="spa" id="spa">
+    <div class="spa-tag">Falling Waters Day Spa</div>
+    <h2>RECOVER. REGENERATE. RISE.</h2>
+    <p>Full-service luxury spa with massage therapy, facials, body treatments, and relaxation lounges. Because recovery is performance.</p>
+    <a href="#membership" class="btn btn-primary">Book Spa Services</a>
+  </section>
+
+  <section class="classes" id="classes">
+    <div class="classes-header">
+      <h2>SIGNATURE CLASSES</h2>
+      <p>Unlimited access to 200+ weekly classes. Included with membership.</p>
     </div>
-    <div class="reviews-showcase">
-      <div class="review-score">
-        <div class="review-number">4.3</div>
-        <div class="review-stars">★★★★☆</div>
-        <div class="review-count">Based on 293 reviews</div>
+    <div class="classes-grid">
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=400&q=80') center/cover">
+        <div class="class-type">Cardio</div>
+        <div class="class-name">INDOOR CYCLING</div>
       </div>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>"Best gym we've ever joined! The kids love it, the equipment is always clean, and the staff actually knows your name."</p>
-        <div class="author">— Sarah M., Member since 2019</div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&q=80') center/cover">
+        <div class="class-type">Strength</div>
+        <div class="class-name">POWER SCULPT</div>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>"The rock wall alone is worth the membership. My kids beg to go to the gym — never thought I'd say that!"</p>
-        <div class="author">— Mike T., Family Member</div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80') center/cover">
+        <div class="class-type">Mind & Body</div>
+        <div class="class-name">VINYASA FLOW</div>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>"Falling Waters Spa is incredible. Workout, then get a massage. It's like a resort membership."</p>
-        <div class="author">— Jennifer K., Premium Member</div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80') center/cover">
+        <div class="class-type">HIIT</div>
+        <div class="class-name">BURN</div>
+      </div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=400&q=80') center/cover">
+        <div class="class-type">Boxing</div>
+        <div class="class-name">KNOCKOUT</div>
+      </div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&q=80') center/cover">
+        <div class="class-type">Dance</div>
+        <div class="class-name">BARRE</div>
+      </div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover">
+        <div class="class-type">Core</div>
+        <div class="class-name">PILATES</div>
+      </div>
+      <div class="class-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=400&q=80') center/cover">
+        <div class="class-type">Aqua</div>
+        <div class="class-name">SWIM TRAINING</div>
       </div>
     </div>
   </section>
 
-  <section class="cta">
-    <h2>Ready to Join the Family?</h2>
-    <p>Start your free week today. No credit card required.</p>
-    <a href="#join" class="btn btn-primary">Get Started Free</a>
+  <section class="cta" id="membership">
+    <h2>READY TO <span>ELEVATE</span>?</h2>
+    <p>Join Utah's premier athletic club. Your transformation starts today.</p>
+    <a href="tel:8015716500" class="btn btn-primary">Call (801) 571-6500</a>
   </section>
 
   <footer>
     <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Locations</h4>
-        <p>📍 Draper: 1101 E Draper Pkwy</p>
-        <p>📍 Sandy: 123 Main Street</p>
+      <div class="footer-brand">
+        <h4>TREEHOUSE ATHLETIC CLUB</h4>
+        <p>72,000 sq ft of premium fitness in the heart of Draper, Utah. Since 1999.</p>
       </div>
       <div class="footer-col">
-        <h4>Hours</h4>
-        <p>Mon-Fri: 5am - 10pm</p>
-        <p>Saturday: 6am - 9pm</p>
-        <p>Sunday: 8am - 5pm</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <a href="#">Class Schedule</a>
+        <h5>Experience</h5>
+        <a href="#">Fitness Floor</a>
+        <a href="#">Group Classes</a>
         <a href="#">Personal Training</a>
         <a href="#">Falling Waters Spa</a>
-        <a href="#">Careers</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
-        <p>📞 (801) 555-TREE</p>
-        <p>✉️ info@treehousefitness.com</p>
+        <h5>Membership</h5>
+        <a href="#">Join Now</a>
+        <a href="#">Guest Pass</a>
+        <a href="#">Corporate</a>
+        <a href="#">Gift Cards</a>
+      </div>
+      <div class="footer-col">
+        <h5>Visit</h5>
+        <a href="#">12234 S 900 E, Draper</a>
+        <a href="#">(801) 571-6500</a>
+        <a href="#">Mon-Fri 5am-10pm</a>
+        <a href="#">Sat-Sun 7am-8pm</a>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Treehouse Athletic Club. All rights reserved.
+      © 2026 Treehouse Athletic Club. All rights reserved. | Draper, Utah
     </div>
   </footer>
 </body>
